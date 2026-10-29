@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancho Escondido | Refugio Natural en Tapalhuaca, La Paz</title>
+    <meta name="description" content="Desconéctate de la rutina, come delicioso y acampa de forma segura bajo las estrellas en Rancho Escondido, Tapalhuaca. A pocos minutos de San Salvador y el aeropuerto.">
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rancho-yellow': '#FFD700',
+                        'rancho-orange': '#FF8C00',
+                        'rancho-brown': '#8B4513',
+                        'rancho-green': '#2E8B57',
+                        'rancho-sky': '#87CEEB',
+                        'rancho-darkbrown': '#4A230A',
+                        'rancho-lightgreen': '#E8F5E9'
+                    },
+                    fontFamily: {
+                        'always': ['"Always Together"', 'Playfair Display', 'serif'],
+                        'market': ['"Market Fresh"', 'Montserrat', 'sans-serif'],
+                        'wiccan': ['"CCWiccan Special"', 'Playfair Display', 'serif'],
+                        'body': ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    
+    <style>
+        /*DECLARACIÓN DE FUENTES PERSONALIZADAS*/
+        @font-face {
+            font-family: 'Always Together';
+            src: url('fonts/AlwaysTogether.woff2') format('woff2'),
+                 url('fonts/AlwaysTogether.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Market Fresh';
+            src: url('fonts/MarketFresh.woff2') format('woff2'),
+                 url('fonts/MarketFresh.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'CCWiccan Special';
+            src: url('fonts/CCWiccanSpecial.woff2') format('woff2'),
+                 url('fonts/CCWiccanSpecial.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Clases de utilidad tipográfica */
+        .font-always { font-family: 'Always Together', 'Playfair Display', Georgia, serif; }
+        .font-market { font-family: 'Market Fresh', 'Montserrat', sans-serif; }
+        .font-wiccan { font-family: 'CCWiccan Special', 'Playfair Display', serif; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+
+        /* Sombra rústica para títulos estilo letrero de madera */
+        .text-wood-shadow {
+            text-shadow: 2px 2px 0px #4A230A, -1px -1px 0px #8B4513;
+        }
+        
+        .card-wood-border {
+            border: 3px solid #8B4513;
+        }
+
+        /* Efecto parallax suave para la hero section */
+        .bg-hero-overlay {
+            background: linear-gradient(180deg, rgba(74, 35, 10, 0.4) 0%, rgba(46, 139, 87, 0.75) 100%);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 font-body antialiased selection:bg-rancho-yellow selection:text-rancho-darkbrown">
+
+    <!-- HEADER / NAUVEGACIÓN PRINCIPAL-->
+    <header class="w-full bg-rancho-darkbrown/95 backdrop-blur-md text-white sticky top-0 z-50 shadow-md border-b-4 border-rancho-yellow transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-rancho-yellow text-rancho-darkbrown flex items-center justify-center font-bold text-xl shadow-inner group-hover:scale-105 transition-transform">
+                    🌄
+                </div>
+                <div>
+                    <span class="text-2xl font-always text-rancho-yellow block leading-none tracking-wide group-hover:text-amber-200 transition-colors">Rancho Escondido</span>
+                    <span class="text-xs font-market text-amber-200 uppercase tracking-widest block">Tapalhuaca, La Paz</span>
+                </div>
+            </a>
+
+            <!-- Navegación -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+                <a href="#inicio" class="text-rancho-yellow hover:text-amber-200 transition-colors">Inicio</a>
+                <a href="#refugio" class="hover:text-rancho-yellow transition-colors">El Refugio</a>
+                <a href="#camping" class="hover:text-rancho-yellow transition-colors">Zonas de Camping</a>
+                <a href="#gastronomia" class="hover:text-rancho-yellow transition-colors">Gastronomía</a>
+                <a href="#como-llegar" class="hover:text-rancho-yellow transition-colors">Cómo Llegar</a>
+                <a href="#patos" class="text-rancho-orange hover:text-rancho-yellow transition-colors font-market flex items-center gap-1">
+                    🦆 Patos Perdidos
+                </a>
+            </nav>
+
+            <!-- Botón CTA Principal -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="https://wa.me/50300000000?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20para%20visitar%20Rancho%20Escondido" 
+                   target="_blank"
+                   class="bg-rancho-yellow hover:bg-amber-400 text-rancho-darkbrown font-bold px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-sm flex items-center gap-2 border-2 border-rancho-orange">
+                    <span>💬 Planifica tu Visita</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden text-rancho-yellow p-2 focus:outline-none" aria-label="Abrir menú">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-rancho-darkbrown border-t border-rancho-brown px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-rancho-yellow font-medium py-2">Inicio</a>
+            <a href="#refugio" class="block text-white hover:text-rancho-yellow py-2">El Refugio</a>
+            <a href="#camping" class="block text-white hover:text-rancho-yellow py-2">Zonas de Camping</a>
+            <a href="#gastronomia" class="block text-white hover:text-rancho-yellow py-2">Gastronomía</a>
+            <a href="#como-llegar" class="block text-white hover:text-rancho-yellow py-2">Cómo Llegar</a>
+            <a href="#patos" class="block text-rancho-orange font-bold py-2">🦆 Dinámica Patos Perdidos</a>
+            <a href="https://wa.me/50300000000?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20para%20visitar%20Rancho%20Escondido" 
+               target="_blank"
+               class="inline-block w-full text-center bg-rancho-yellow text-rancho-darkbrown font-bold py-3 rounded-full mt-2">
+                💬 Planifica tu Visita por WhatsApp
+            </a>
+        </div>
+    </header>
+
+
+    <!--   HERO SECTION  = -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center text-white overflow-hidden bg-rancho-green">
+        
+        <img src="https://scontent.fsal7-1.fna.fbcdn.net/v/t39.30808-6/615232059_122171695766801959_939638637734240435_n.jpg?stp=dst-jpg_tt6&cstp=mx1512x2016&ctp=s1512x2016&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kRfCp5Qpb-gQ7kNvwG6zL_5&_nc_oc=Adoi9wLujuNT_qcZpY7AIzZWtKNW7R7MzZGLDn_VQ6aKl3IJi58-feGluEDSscN_sMs&_nc_zt=23&_nc_ht=scontent.fsal7-1.fna&_nc_gid=EeLUwOCBjc-obij1B8ZoFQ&_nc_ss=7b2a8&oh=00_AQSb6qWr2NOQZBZZEBKoBtH8jDGFhYZZEFy3jQmaUb6YJg&oe=6AE8864D" 
+             alt="Atardecer mágico en Rancho Escondido Tapalhuaca" 
+             class="absolute inset-0 w-full h-full object-cover object-center"
+             onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80'">
+        
+        <!-- Overlay oscuro para legibilidad -->
+        <div class="absolute inset-0 bg-hero-overlay"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 z-10">
+            <span class="inline-block bg-rancho-orange/90 text-white font-market text-sm sm:text-base px-4 py-1.5 rounded-full mb-6 border border-amber-300 shadow-md">
+                🌿 Tu refugio de tranquilidad cerca de la ciudad
+            </span>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-always font-bold tracking-wide text-rancho-yellow text-wood-shadow mb-6 leading-tight">
+                Un refugio escondido en la montaña
+            </h1>
+            
+            <p class="text-lg sm:text-2xl font-body max-w-3xl mx-auto mb-10 text-amber-100 font-light leading-relaxed drop-shadow">
+                Desconéctate de la rutina, respira aire puro y acampa seguro bajo las estrellas en Tapalhuaca, La Paz.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#refugio" class="w-full sm:w-auto bg-rancho-yellow hover:bg-amber-400 text-rancho-darkbrown font-bold text-lg px-8 py-4 rounded-full shadow-2xl hover:scale-105 transition-all border-2 border-rancho-orange">
+                    🌲 Descubrir el Refugio
+                </a>
+                <a href="#como-llegar" class="w-full sm:w-auto bg-rancho-sky/90 hover:bg-rancho-sky text-stone-900 font-semibold text-lg px-8 py-4 rounded-full shadow-lg backdrop-blur-sm transition-all border border-white">
+                    📍 ¿Cómo llegar?
+                </a>
+            </div>
+        </div>
+        
+        <!-- Curva Decorativa Inferior -->
+        <div class="absolute bottom-0 left-0 right-0 h-12 bg-amber-50" style="clip-path: polygon(0 100%, 100% 100%, 100% 0);"></div>
+    </section>
+
+
+    <!--  PROPUESTA DE VALOR RÁPIDA (3 Tarjetas) -->
+    <section class="py-12 -mt-10 relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Tarjeta 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xl card-wood-border hover:-translate-y-1 transition-transform bg-gradient-to-br from-white to-amber-50">
+                <div class="w-14 h-14 rounded-2xl bg-rancho-sky/30 text-rancho-darkbrown flex items-center justify-center text-3xl mb-4">
+                    🚗
+                </div>
+                <h3 class="text-xl font-wiccan font-bold text-rancho-brown mb-2">Cerca y Accesible</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    A minutos del Aeropuerto Internacional y San Salvador. Acceso vehicular sencillo sin complicaciones de carretera.
+                </p>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xl card-wood-border hover:-translate-y-1 transition-transform bg-gradient-to-br from-white to-amber-50">
+                <div class="w-14 h-14 rounded-2xl bg-rancho-yellow/40 text-rancho-darkbrown flex items-center justify-center text-3xl mb-4">
+                    💰
+                </div>
+                <h3 class="text-xl font-wiccan font-bold text-rancho-brown mb-2">Precios Justos</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Disfruta de una experiencia de calidad a costos accesibles. Tarifas transparentes de entrada, comida y camping.
+                </p>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xl card-wood-border hover:-translate-y-1 transition-transform bg-gradient-to-br from-white to-amber-50">
+                <div class="w-14 h-14 rounded-2xl bg-rancho-green/20 text-rancho-green flex items-center justify-center text-3xl mb-4">
+                    🏕️
+                </div>
+                <h3 class="text-xl font-wiccan font-bold text-rancho-brown mb-2">Seguridad y Paz</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Ambiente 100% familiar, privado y tranquilo. Espacios monitoreados e iluminados para acampar sin preocupaciones.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 
+       EL REFUGIO Y EXPERIENCIAS (Pasar el Día vs. Acampar) -->
+    <section id="refugio" class="py-16 bg-rancho-green text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-rancho-yellow font-market text-lg uppercase tracking-wider block mb-2">Vive la experiencia</span>
+                <h2 class="text-4xl sm:text-5xl font-always text-rancho-yellow text-wood-shadow mb-4">El Refugio Natural que Buscabas</h2>
+                <p class="text-amber-100 text-base sm:text-lg">
+                    Diseñado para reconectar con la naturaleza a tu propio ritmo, ya sea en un pasadía campestre o bajo el firmamento.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Experiencia 1: Pasadía -->
+                <div class="bg-rancho-darkbrown/90 rounded-3xl overflow-hidden shadow-2xl border-2 border-rancho-orange flex flex-col">
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        
+                        <img src="https://scontent.fsal7-1.fna.fbcdn.net/v/t39.30808-6/547430509_122157241586801959_2897157388377949313_n.jpg?stp=dst-jpg_tt6&cstp=mx756x1008&ctp=s756x1008&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IgPmrXx2QSIQ7kNvwFIvD7z&_nc_oc=AdqEu4N5esXG1yCp5bJIqJ17V7K2Vy3J5uA2M-oKHABuyeLogE96maVX4W3t9fOo0CQ&_nc_zt=23&_nc_ht=scontent.fsal7-1.fna&_nc_gid=vNFsL7Ie5nrzLUTFboZCig&_nc_ss=7b2a8&oh=00_AQRkqV5rjGnpY5Q_uzy4t6Qfp3fD8VIgAgxsCaR2ZvtX-w&oe=6AE86A02" 
+                             alt="Instalaciones para pasar el día en Rancho Escondido" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'">
+                        <span class="absolute top-4 left-4 bg-rancho-orange text-white font-market px-3 py-1 rounded-full text-xs uppercase font-bold">
+                            ☀️ Pasadía Familiar
+                        </span>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-always text-rancho-yellow mb-3">Pasa el Día en la Montaña</h3>
+                            <p class="text-amber-100 text-sm leading-relaxed mb-6">
+                                Ven con tu familia o amigos a disfrutar de áreas verdes amplias, aire puro, deliciosos platillos típicos preparados al momento y áreas de descanso con sombras naturales.
+                            </p>
+                            <ul class="space-y-2 text-sm text-amber-200 mb-6">
+                                <li class="flex items-center gap-2">✅ Mesas y comedores rústicos al aire libre</li>
+                                <li class="flex items-center gap-2">✅ Áreas verdes para juegos familiares</li>
+                                <li class="flex items-center gap-2">✅ Ambiente tranquilo sin aglomeraciones</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/50300000000?text=Hola!%20Quiero%20visitar%20Rancho%20Escondido%20para%20un%20pasadía" 
+                           target="_blank"
+                           class="w-full text-center bg-rancho-yellow hover:bg-amber-400 text-rancho-darkbrown font-bold py-3 rounded-xl transition-colors">
+                            Planificar Pasadía
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Experiencia 2: Camping -->
+                <div id="camping" class="bg-rancho-darkbrown/90 rounded-3xl overflow-hidden shadow-2xl border-2 border-rancho-yellow flex flex-col">
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        
+                        <img src="https://scontent.fsal7-1.fna.fbcdn.net/v/t39.30808-6/489567480_122123388422801959_6175124047712224592_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s960x1280&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=ps1dI1nl9VkQ7kNvwFoqdvC&_nc_oc=AdpEnbh2DlfdND6d-rvDDCmvrOobJJMOP6SrEjXRPg0oZbRjRHuGybrJqiCcNWYqbbI&_nc_zt=23&_nc_ht=scontent.fsal7-1.fna&_nc_gid=NRwkGAq00ylfR9msCtD6fA&_nc_ss=7b2a8&oh=00_AQRmttF3aQxHxpBPQM-l1gQS5S9ia75_3dONlGDn__yjOg&oe=6AE88653"  
+                             alt="Zona de camping bajo las estrellas en Rancho Escondido" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80'">
+                        <span class="absolute top-4 left-4 bg-rancho-yellow text-rancho-darkbrown font-market px-3 py-1 rounded-full text-xs uppercase font-bold">
+                            🏕️ Acampar Seguro
+                        </span>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-always text-rancho-yellow mb-3">Noche Bajo las Estrellas</h3>
+                            <p class="text-amber-100 text-sm leading-relaxed mb-6">
+                                Una experiencia única de campamento rodeado de verde. La combinación ideal entre naturaleza libre y las facilidades necesarias para descansar con total tranquilidad.
+                            </p>
+                            <ul class="space-y-2 text-sm text-amber-200 mb-6">
+                                <li class="flex items-center gap-2">✅ Terreno plano y grama limpia para tiendas</li>
+                                <li class="flex items-center gap-2">✅ Sanitarios limpios y acceso a agua potable</li>
+                                <li class="flex items-center gap-2">✅ Espacio para fogatas supervisadas y seguridad nocturna</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/50300000000?text=Hola!%20Me%20interesa%20reservar%20un%20espacio%20para%20acampar" 
+                           target="_blank"
+                           class="w-full text-center bg-rancho-orange hover:bg-amber-600 text-white font-bold py-3 rounded-xl transition-colors">
+                            Reservar Espacio de Camping
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--    TRANSPARENCIA EN EL ACCESO Y RUTA -->
+    <section id="como-llegar" class="py-16 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl card-wood-border">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    
+                    <div>
+                        <span class="inline-block bg-rancho-sky/40 text-rancho-darkbrown font-market px-3 py-1 rounded-full text-xs uppercase mb-3">
+                            📍 Tapalhuaca, La Paz
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-always text-rancho-brown mb-4">¿Cómo llegar a Rancho Escondido?</h2>
+                        <p class="text-stone-600 text-base leading-relaxed mb-6">
+                            Nos encontramos en el pintoresco municipio de <strong>Tapalhuaca, departamento de La Paz</strong>. Sabemos que el camino da dudas, ¡pero llegar es súper fácil!
+                        </p>
+
+                        <div class="bg-amber-100/60 p-5 rounded-2xl border-l-4 border-rancho-orange mb-6 space-y-3">
+                            <h4 class="font-bold text-rancho-brown flex items-center gap-2">
+                                🚗 Estado de la Calle:
+                            </h4>
+                            <p class="text-sm text-stone-700 leading-relaxed">
+                                Solo recorrerás <strong>500 metros de calle de tierra accesible</strong> desde la vía principal. ¡Cualquier tipo de vehículo (sedán, hatchback o 4x4) entra perfectamente sin inconvenientes!
+                            </p>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-stone-700 mb-8">
+                            <li class="flex items-start gap-2">
+                                <span class="text-rancho-green font-bold">⏱️</span>
+                                <span>A solo 20 minutos del Aeropuerto Internacional de El Salvador.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-rancho-green font-bold">🅿️</span>
+                                <span>Estacionamiento interno y vigilado dentro de la propiedad.</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://maps.google.com" target="_blank" class="bg-rancho-green text-white font-bold px-6 py-3 rounded-full hover:bg-emerald-800 transition-colors text-sm flex items-center gap-2">
+                                🗺️ Abrir en Google Maps
+                            </a>
+                            <a href="https://waze.com" target="_blank" class="bg-rancho-sky text-stone-900 font-bold px-6 py-3 rounded-full hover:bg-sky-300 transition-colors text-sm flex items-center gap-2">
+                                🚘 Abrir en Waze
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Interactivo / Placeholder -->
+                    <div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg border-2 border-rancho-brown">
+                        <iframe 
+                            title="Ubicación de Rancho Escondido Tapalhuaca"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3878.532398488349!2d-88.948!3d13.528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMxJzIwLjgiTiA4OMKwNTYnNTI4LjAiVw!5e0!3m2!1ses!2ssv!4v1620000000000!5m2!1ses!2ssv" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--  MENÚ Y TARIFAS TRANSPARENTES -->
+    <section id="gastronomia" class="py-16 bg-rancho-brown text-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-rancho-yellow font-market text-lg uppercase block mb-2">Precios Claros sin Sorpresas</span>
+                <h2 class="text-4xl sm:text-5xl font-always text-rancho-yellow text-wood-shadow mb-4">Tarifas y Gastronomía Típica</h2>
+                <p class="text-amber-100 text-sm sm:text-base">
+                    Comida hecha con sazón de hogar y precios accesibles para toda la familia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Columna 1: Entradas y Camping -->
+                <div class="bg-rancho-darkbrown p-8 rounded-3xl border border-amber-800 shadow-xl">
+                    <h3 class="text-2xl font-always text-rancho-yellow mb-6 pb-2 border-b border-amber-700/50 flex items-center justify-between">
+                        <span>🎟️ Entradas y Camping</span>
+                        <span class="text-xs font-market text-rancho-orange">Precios por persona</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center pb-3 border-b border-amber-900/40">
+                            <div>
+                                <span class="font-bold text-lg block text-white">Entrada General (Pasadía)</span>
+                                <span class="text-xs text-amber-200">Acceso a instalaciones y zonas verdes todo el día.</span>
+                            </div>
+                            <span class="text-xl font-bold text-rancho-yellow font-market">$0.00</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-amber-900/40">
+                            <div>
+                                <span class="font-bold text-lg block text-white">Derecho de Campamento (Noche)</span>
+                                <span class="text-xs text-amber-200">Uso de sanitario, agua y área segura para tienda.</span>
+                            </div>
+                            <span class="text-xl font-bold text-rancho-yellow font-market">$0.00</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-lg block text-white">Niños menores de 6 años</span>
+                                <span class="text-xs text-amber-200">Ingreso gratuito a las instalaciones.</span>
+                            </div>
+                            <span class="text-xl font-bold text-rancho-yellow font-market">GRATIS</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Platillos Típicos -->
+                <div class="bg-rancho-darkbrown p-8 rounded-3xl border border-amber-800 shadow-xl">
+                    <h3 class="text-2xl font-always text-rancho-yellow mb-6 pb-2 border-b border-amber-700/50 flex items-center justify-between">
+                        <span>🍲 Platillos Destacados</span>
+                        <span class="text-xs font-market text-rancho-orange">Sazón Campestre</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center pb-3 border-b border-amber-900/40">
+                            <div>
+                                <span class="font-bold text-lg block text-white">Plato Típico de Gallina India</span>
+                                <span class="text-xs text-amber-200">Servido con sopa, arroz, ensalada y tortillas raspadas.</span>
+                            </div>
+                            <span class="text-xl font-bold text-rancho-yellow font-market">$0.00</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-amber-900/40">
+                            <div>
+                                <span class="font-bold text-lg block text-white">Carne Asada de la Casa</span>
+                                <span class="text-xs text-amber-200">Acompañada de chirmol, frijoles y cuajada fresca.</span>
+                            </div>
+                            <span class="text-xl font-bold text-rancho-yellow font-market">$0.00</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-lg block text-white">Hamburguesa Tradicional</span>
+                                <span class="text-xs text-amber-200">Carne de la casa con papas fritas.</span>
+                            </div>
+                            <span class="text-xl font-bold text-rancho-yellow font-market">$0.00</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PRUEBA SOCIAL Y DINÁMICA "LOS PATOS PERDIDOS" -->
+    <section id="patos" class="py-16 bg-rancho-sky/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-gradient-to-r from-rancho-yellow to-amber-300 rounded-3xl p-8 sm:p-12 shadow-2xl card-wood-border text-rancho-darkbrown relative">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    
+                    <div class="lg:col-span-2">
+                        <span class="bg-rancho-orange text-white font-market text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block font-bold">
+                            🦆 ¡Búsqueda del Tesoro Especial!
+                        </span>
+                        <h2 class="text-3xl sm:text-5xl font-always text-rancho-darkbrown mb-4">
+                            ¿Te atreves a encontrar a los 2 Patos Perdidos?
+                        </h2>
+                        <p class="text-stone-800 text-base sm:text-lg mb-6 leading-relaxed">
+                            Hay <strong>2 patos escondidos</strong> por todo Rancho Escondido. Si los encuentras durante tu visita, llévalos al dueño y ¡recibe tu recompensa al instante!
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-amber-400 flex items-center gap-3">
+                                <span class="text-3xl">🎟️</span>
+                                <div>
+                                    <strong class="block text-rancho-brown">1 PATO ENCONTRADO:</strong>
+                                    <span class="text-xs text-stone-700">Pases para Playland Park</span>
+                                </div>
+                            </div>
+                            <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-amber-400 flex items-center gap-3">
+                                <span class="text-3xl">🍔</span>
+                                <div>
+                                    <strong class="block text-rancho-brown">1 PATO ENCONTRADO:</strong>
+                                    <span class="text-xs text-stone-700">2 Hamburguesas de la casa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico Decorativo de los Patos -->
+                    <div class="text-center bg-white/60 p-6 rounded-2xl border-2 border-rancho-orange shadow-inner">
+                        <div class="text-7xl mb-2 animate-bounce">🦆🦆</div>
+                        <span class="font-always text-xl text-rancho-brown block">En Rancho Escondido</span>
+                        <span class="text-xs font-market text-stone-600">¡Diversión garantizada para todos!</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Testimonios de Visitantes -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-always text-center text-rancho-brown mb-8">Lo que dicen quienes ya nos descubrieron</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-stone-200">
+                        <div class="text-rancho-yellow text-xl mb-2">⭐⭐⭐⭐⭐</div>
+                        <p class="text-stone-600 text-sm italic mb-4">Ejemplo de testimonio 1</p>
+                        <span class="font-bold text-xs text-rancho-brown block">- Carlos M. (San Salvador)</span>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-stone-200">
+                        <div class="text-rancho-yellow text-xl mb-2">⭐⭐⭐⭐⭐</div>
+                        <p class="text-stone-600 text-sm italic mb-4">Ejemplo de testimonio 2</p>
+                        <span class="font-bold text-xs text-rancho-brown block">- Sofia G. (Olocuilta)</span>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-stone-200">
+                        <div class="text-rancho-yellow text-xl mb-2">⭐⭐⭐⭐⭐</div>
+                        <p class="text-stone-600 text-sm italic mb-4">Ejemplo de testimonio 3</p>
+                        <span class="font-bold text-xs text-rancho-brown block">- Familia Rivas (Santiago Nonualco)</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- OOTER / PIE DE PÁGINA -->
+    <footer class="bg-rancho-darkbrown text-amber-100 border-t-8 border-rancho-yellow pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Columna 1: Marca -->
+                <div class="md:col-span-1">
+                    <span class="text-2xl font-always text-rancho-yellow block mb-2">Rancho Escondido</span>
+                    <p class="text-xs text-amber-200/80 leading-relaxed mb-4">
+                        Tu espacio acogedor en la montaña para comer rico, descansar y acampar seguro en Tapalhuaca, La Paz.
+                    </p>
+                    <span class="text-xs font-market text-rancho-orange block">© 2026 Rancho Escondido</span>
+                </div>
+
+                <!-- Columna 2: Navegación Rápida -->
+                <div>
+                    <h4 class="font-market text-rancho-yellow uppercase text-xs tracking-wider mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-rancho-yellow transition-colors">Inicio</a></li>
+                        <li><a href="#refugio" class="hover:text-rancho-yellow transition-colors">El Refugio</a></li>
+                        <li><a href="#camping" class="hover:text-rancho-yellow transition-colors">Zonas de Camping</a></li>
+                        <li><a href="#gastronomia" class="hover:text-rancho-yellow transition-colors">Gastronomía y Precios</a></li>
+                        <li><a href="#como-llegar" class="hover:text-rancho-yellow transition-colors">Ubicación y Ruta</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto Directo -->
+                <div>
+                    <h4 class="font-market text-rancho-yellow uppercase text-xs tracking-wider mb-4">Contacto y Reservas</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center gap-2">
+                            <span>💬 WhatsApp:</span>
+                            <a href="https://wa.me/50300000000" target="_blank" class="hover:text-rancho-yellow">+503 0000-0000</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>📍 Ubicación:</span>
+                            <span>Tapalhuaca, La Paz, El Salvador</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>🕒 Horarios:</span>
+                            <span>Dias que abren: X:00 AM - X:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Redes Sociales -->
+                <div>
+                    <h4 class="font-market text-rancho-yellow uppercase text-xs tracking-wider mb-4">Síguenos en Redes</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-rancho-brown flex items-center justify-center text-rancho-yellow hover:bg-rancho-yellow hover:text-rancho-darkbrown transition-colors">
+                            FB
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-rancho-brown flex items-center justify-center text-rancho-yellow hover:bg-rancho-yellow hover:text-rancho-darkbrown transition-colors">
+                            IG
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-full bg-rancho-brown flex items-center justify-center text-rancho-yellow hover:bg-rancho-yellow hover:text-rancho-darkbrown transition-colors">
+                            TK
+                        </a>
+                    </div>
+                    <span class="text-xs text-amber-200/60 block">¡Escríbenos para enviarte la ubicación directa!</span>
+                </div>
+
+            </div>
+
+            <!-- Créditos y Aviso Legal -->
+            <div class="border-t border-amber-900/60 pt-6 text-center text-xs text-amber-200/50">
+                <p>Proyecto académico. No es el sitio oficial de Rancho Escondido.</p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT INTERACTIVO LIGERO-->
+    <script>
+        // Lógica del Menú Móvil Desplegable
+        const btnMenu = document.getElementById('mobile-menu-btn');
+        const menuMovil = document.getElementById('mobile-menu');
+
+        btnMenu.addEventListener('click', () => {
+            menuMovil.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuMovil.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
